@@ -1,5 +1,6 @@
 package serverone;
 
+import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
 
 import java.io.IOException;
@@ -13,10 +14,14 @@ public class ServerOne {
     private static final int MAX_WAITING_CONNECTIONS = 10;
 
     private static HttpServer server;
-    public ServerOne(){
+
+    private static HttpHandler mainHandler;
+
+    public ServerOne() {
 
     }
-    public void run(){
+
+    public void run() {
         try {
             server = HttpServer.create(new InetSocketAddress(SERVER_PORT_NUMBER), MAX_WAITING_CONNECTIONS);
         } catch (IOException e) {
@@ -25,6 +30,12 @@ public class ServerOne {
 
         server.setExecutor(null);
 
-//        server.createContext();
+        server.createContext("/test", mainHandler);
+    }
+
+    public static void main(String[] args) {
+        mainHandler = new OneHandler();
+
+        new ServerOne().run();
     }
 }
