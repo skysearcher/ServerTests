@@ -1,4 +1,4 @@
-package CapServer;
+package capserver;
 
 
 import java.io.BufferedReader;

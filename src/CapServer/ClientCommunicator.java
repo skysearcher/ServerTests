@@ -1,4 +1,4 @@
-package CapServer;
+package capserver;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
