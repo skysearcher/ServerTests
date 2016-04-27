@@ -1,4 +1,4 @@
-package servertwo;
+package CapServer;
 
 
 import java.io.BufferedReader;
@@ -26,8 +26,16 @@ public class Communicator extends Thread {
             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
             out.println("You are client # = " + clientNumber);
             out.println("Client Connection starting . . . ");
+            String input;
             while(true){
-
+                input = in.readLine();
+                if(input == null || input.equals(".")){
+                    break;
+                }
+                if(!input.equals("")){
+                    String test = "";
+                }
+                out.println(input.toUpperCase());
             }
 
         } catch (IOException e) {
