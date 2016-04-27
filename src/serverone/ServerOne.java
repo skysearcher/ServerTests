@@ -31,11 +31,11 @@ public class ServerOne {
         server.setExecutor(null);
 
         server.createContext("/test", mainHandler);
+        server.start();
     }
 
     public static void main(String[] args) {
         mainHandler = new OneHandler();
-
         new ServerOne().run();
     }
 }

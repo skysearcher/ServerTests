@@ -31,14 +31,12 @@ public class TestBomber {
         StopWatch stop = new StopWatch();
         stop.start();
         for(int i = 0; i < 10000; i++){
-            System.out.println("Time since Start Before = " + stop.getElapsedTime());
             HttpURLResponse test = doGet("/test");
-            System.out.println(test.getResponseBody());
             if(test.getResponseBody().equals("")){
                 i = 10000;
             }
-            System.out.println("Time since Start After = " + stop.getElapsedTime());
         }
+        System.out.println("Start After = " + stop.getElapsedTime());
         stop.stop();
     }
 
