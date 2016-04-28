@@ -1,4 +1,4 @@
-package quotableserver;
+package quotableserver.model;
 
 import java.util.ArrayList;
 import java.util.List;
