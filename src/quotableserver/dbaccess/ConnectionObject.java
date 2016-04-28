@@ -1,7 +1,7 @@
 package quotableserver.dbaccess;
 
 import java.io.File;
-import java.sql.Connection;
+import java.sql.*;
 
 /**
  * Created by Joshua on 4/27/2016.
@@ -11,7 +11,7 @@ public class ConnectionObject {
     private QuoteTagDAO quoteTagDAO;
     private TagDAO tagDAO;
     private UserDAO userDAO;
-    private static Connection connection;
+    private Connection connection;
 
     private static final String DATABASE_DIRECTORY = "database";
     private static final String DATABASE_FILE = "Project1.sqlite";
@@ -27,10 +27,25 @@ public class ConnectionObject {
             String driver = "org.sqlite.JDBC";
             File f = new File(driver);
             Class.forName(driver);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+    public void startConnection(){
+        if (connection == null) {
+            try {
+                connection = DriverManager.getConnection(DATABASE_URL);
+                connection.setAutoCommit(false);
+                if (connection == null) {
+                    System.out.println("DIE");
+                } else {
+                    connection.setAutoCommit(false);
+                    System.out.println("real");
 
-            //connection = DriverManager.getConnection(DATABASE_URL);
-        } catch (ClassNotFoundException e) {// | SQLException e) {
-            System.out.println(e.toString());
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
 
