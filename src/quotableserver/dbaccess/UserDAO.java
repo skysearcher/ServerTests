@@ -33,9 +33,13 @@ public class UserDAO {
         PreparedStatement stmt;
 
         query = "CREATE TABLE users " +
-                "(PlayerId INT NOT NULL," +
-                " Username     varchar(32)    NOT NULL, " +
-                " Password     varchar(32)     NOT NULL)";
+                "(UserId int PRIMARY KEY," +
+                " Username  varchar(32)  NOT NULL, " +
+                " Password  varchar(32)  NOT NULL, " +
+                " Flag  varchar(32), " +
+                " Reports   int, " +
+                " CommunityPoints int, ";
+
         try {
             stmt = connection.prepareStatement(query);
             stmt.execute();
