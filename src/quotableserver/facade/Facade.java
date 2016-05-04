@@ -5,4 +5,8 @@ package quotableserver.facade;
  */
 public class Facade {
 
+    public Facade(){
+
+    }
+
 }

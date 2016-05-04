@@ -15,6 +15,7 @@ public class QuoteModel {
 
     public QuoteModel(){
         quotes = new ArrayList<Quote>();
+        tags = new ArrayList<String>();
     }
 
     public List<Quote> searchByAuthor(String author){

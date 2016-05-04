@@ -30,6 +30,7 @@ public class ConnectionObject {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+
     }
     public void startConnection(){
         if (connection == null) {

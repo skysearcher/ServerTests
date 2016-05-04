@@ -5,11 +5,12 @@ package quotableserver.model;
  */
 public class User {
     private int userId;
-    private int reports;
-    private int communityPoints;
     private String username;
     private String password;
+    private String type;
     private String flag;
+    private int reports;
+    private int communityPoints;
 
     public User(){
         userId = 0;
@@ -20,28 +21,22 @@ public class User {
         flag = "";
     }
 
+    public User(int userId, String username, String password, String type, String flag, int reports, int communityPoints) {
+        this.userId = userId;
+        this.username = username;
+        this.password = password;
+        this.type = type;
+        this.flag = flag;
+        this.reports = reports;
+        this.communityPoints = communityPoints;
+    }
+
     public int getUserId() {
         return userId;
     }
 
     public void setUserId(int userId) {
         this.userId = userId;
-    }
-
-    public int getReports() {
-        return reports;
-    }
-
-    public void setReports(int reports) {
-        this.reports = reports;
-    }
-
-    public int getCommunityPoints() {
-        return communityPoints;
-    }
-
-    public void setCommunityPoints(int communityPoints) {
-        this.communityPoints = communityPoints;
     }
 
     public String getUsername() {
@@ -60,6 +55,14 @@ public class User {
         this.password = password;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     public String getFlag() {
         return flag;
     }
@@ -67,4 +70,21 @@ public class User {
     public void setFlag(String flag) {
         this.flag = flag;
     }
+
+    public int getReports() {
+        return reports;
+    }
+
+    public void setReports(int reports) {
+        this.reports = reports;
+    }
+
+    public int getCommunityPoints() {
+        return communityPoints;
+    }
+
+    public void setCommunityPoints(int communityPoints) {
+        this.communityPoints = communityPoints;
+    }
+
 }
